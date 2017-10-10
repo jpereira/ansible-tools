@@ -1,0 +1,18 @@
+redis_ip: 192.168.33.9
+dns_ip_master: "8.8.4.4"
+
+mgmt_subnets: [ "44.11.0.0/16", # POP XY1
+                "44.12.0.0/16", # POP XY2
+                "44.13.0.0/24", # POP XY3
+]
+
+ip_affinity_config: {
+  append_to_routing_routes: [
+    { ipv4: "172.16.0.1/32", desc: "Customer XYZ" },
+    { ipv4: "172.16.0.2/32", desc: "Customer XYZ" },
+  ],
+  addrs: [
+    { ipv4: "172.16.0.6/32", desc: "Customer Caipirinha" },
+    { ipv4: "172.16.0.7/32", desc: "Customer Caipirinha" },
+  ]
+}
